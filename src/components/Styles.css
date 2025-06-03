@@ -11,6 +11,11 @@ body{
 #root{
     padding: 0;
     max-width: 100%;
+    text-align: center;
+}
+
+body, #root{
+    width: 100%;
 }
 
 .navbar{
@@ -18,33 +23,37 @@ body{
     justify-content: space-around;
     align-items: center;
     background-color: black;
-    height: 120px;
+    height: 110px;
+
 }
 
-.navbar-list{
-    display: flex;
-    padding-right:7%;
+.navbarLinks{
+    padding: 0 220px 0 0;
+}
+.logo{
+    padding: 10px;
+    width: 250px;
 }
 
-.navbar-item{
-    list-style: none;
-    padding: 15px;
+.navbarLinks a{
+    padding: 25px;
 }
 
-.navbar-item a{
+.navbarItem{
     color: white;
 }
 
-.navbar-item a:hover{
+.navbarItem:hover{
     color: aqua;
 }
 
-.textoSaludo{
-    padding-top: 50px;
+.filterButton{
+    padding: 10px;
 }
 
-.logo{
-    padding: 10px;
+.filterButton:hover{
+    color: aqua;
+    outline: 1px solid aqua;
 }
 
 .carrito{
@@ -63,20 +72,22 @@ body{
     transform: translate(50%, -50%);
 }
 
-#container {
+.container {
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
     padding: 50px 200px 0 200px;
+    justify-content: center;
 }
 
 .card {
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 250px;
     background-color: aqua;
     border-radius: 15px;
     text-align: center;
     color: white;
+    padding: 5px;
 }
 
 .card:hover{ 

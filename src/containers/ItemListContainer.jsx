@@ -15,15 +15,11 @@ const ItemListContainer = () => {
     });
 
     getData.then((res) => {
-      if (categoriaId) {
-        setItems(res.filter(p => p.categoria === categoriaId));
-      } else {
-        setItems(res);
-      }
+      setItems(res);
     });
-  }, [categoriaId]);
+  }, []);
 
-  return <ItemList productos={items} />;
+  return <ItemList items={items} />;
 };
 
 export default ItemListContainer;
