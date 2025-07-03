@@ -6,10 +6,14 @@ import ItemListContainer from "./containers/ItemListContainer";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 import Error from "./components/Error";
 import "./components/Styles.css"
+import { CartProvider } from "./components/CartContext";
+import Cart from "./components/Cart";
+import CheckoutForm from "./components/CheckoutForm";
 
 function App() {
   return (
-    <BrowserRouter>
+    <CartProvider>
+     <BrowserRouter>
       <NavBar />
        <Routes>
         <Route path="/" element={<Inicio />} />
@@ -17,12 +21,15 @@ function App() {
         <Route path="/tienda/categoria/:categoriaId" element={<ItemListContainer />} />
         <Route path="/tienda/item/:itemId" element={<ItemDetailContainer />} />
         <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<CheckoutForm />} />
         <Route path="*" element={<Error />} />
       </Routes>
-    </BrowserRouter>
+     </BrowserRouter>
+    </CartProvider>
   );
 }
 
-// Entrego la parte que tengo hecha de la entrega, en el lapso que el profe o tutor continue con las correcciones, voy a ir terminando de sumar la parte visual para que sea un poco mas atractivo. Perdon por la demora en no tener al 100% la entrega hecha al tiempo establecido, pero tuve un viaje familiar imprevisto y anduve corto de tiempo. Tuve dudas con la consigna que pedia acomodar los archivos en ItemDetailContainer y ItemListContainer, pregunte por el chat privado de Coder al profe pero me parece que no vio el mensaje porque no tuve respuesta. Lo hice como pude tratando de mantener la funcionalidad, espero por esta preentrega sea suficiente. En la entrega final lo corrijo bien. Gracias!
+// En el primer push de este proyecto me enfoque en la funcionalidad y requisitos de la engrega, ya que tuve poco tiempo por el trabajo. Pero poco a poco voy a ir implementando mejoras en el diseño y efectos visuales para una mejor interaccion del UNSAFE_useScrollRestoration.
 
 export default App;

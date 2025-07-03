@@ -1,12 +1,16 @@
 import ItemCount from "./ItemCount";
+import { useNavigate } from "react-router-dom";
 
-const ItemDetail = ({ nombre, descripcion, valor }) => {
+const ItemDetail = (props) => {
+const navigate = useNavigate();
+
   return (
     <div>
-      <h2>{nombre}</h2>
-      <p>{descripcion}</p>
-      <p>Precio: ${valor}</p>
-      <ItemCount stock={10} inicial={1} />
+      <h2>{props.nombre}</h2>
+      <p>{props.descripcion}</p>
+      <p>Precio: ${props.valor}</p>
+      <ItemCount inicial={1} item={props} />
+      <button onClick={() => navigate(-1)}>Atrás</button>
     </div>
   );
 };
